@@ -1,0 +1,13 @@
+services:
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: mysql
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: example
+    volumes:
+      - ./volume/wordpress:/var/www/html
